@@ -1,0 +1,31 @@
+.Cards {
+  background-color: rgb(92, 3, 3);
+  border: 2px solid rgb(0, 0, 0); 
+  border-radius: 10px; 
+  padding: 16px; 
+  color: white; 
+  width: 200px;
+  height: 400px;
+  text-align: center;
+    margin-top: 4px;
+}
+
+.Cards div {
+  display: flex;
+  justify-content: center; /* centra todo horizontalmente */
+  align-items: center;     /* alinea verticalmente */
+  gap: 8px;                /* espacio entre botones e input */
+  margin: 8px 0;
+}
+
+.Cards input {
+  width: 40px;
+  text-align: center;
+}
+
+.Cards img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
