@@ -1,5 +1,6 @@
 import "./styles.css";
 import CartWidget from "../common/cartwidget"
+import { NavLink } from "react-router";
 
 function Navbar() {
   return (
@@ -7,9 +8,10 @@ function Navbar() {
       <h4>FORKLIFT SERVICES</h4>
 
       <ul>
-        <li>Inicio</li>
-        <li>Productos</li>
-        <li>Contacto</li>
+        <NavLink to="/" >Home</NavLink>
+        <NavLink to="/products">Productos</NavLink>   
+        <NavLink to="/contact" >Contact</NavLink>
+
       </ul>
 
       <CartWidget />
