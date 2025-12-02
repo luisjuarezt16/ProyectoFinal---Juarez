@@ -1,89 +1,52 @@
-import "./styles.css"
-import Cards from "../../components/container/Cards"
+import './styles.css'
+import { useState, useEffect } from 'react'
+import Cards from '../../components/container/Cards'
+
 
 const Products = () => {
-    
-    return (
-        
-        <>
-            <div>
-                <h1>PRODUCTOS DISPONIBLE</h1>
-            </div>
-            <div className='contenedor-cards'>
-                <Cards
-                nombre="Ruedas Montacarga"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
+  const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('/data/products.json') 
+        .then((res) => {
+          if (!res.ok) throw new Error('Error al cargar productos');
+          return res.json();
+        })
+        .then((data) => {
+          setProductos(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setLoading(false);
+        });
+    }, 2500)
+  }, [])
 
-                <Cards
-                nombre="Relay de Partida"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Timon"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Ruedas Montacarga"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-
-                <Cards
-                nombre="Relay de Partida"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Timon"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Ruedas Montacarga"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/"
-                />
-
-
-                <Cards
-                nombre="Relay de Partida"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Timon"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-
-                <Cards
-                nombre="Timon"
-                precio="$89.990"
-                imagen="https://via.placeholder.com/150"
-                />
-            </div>
-        
-        
-        </>
-
-
-       
-
-
-    )
-   
-
-}
+  return (
+    <>
+      <div>
+        <h1>PRODUCTOS DISPONIBLES</h1>
+      </div>
+      <div className='contenedor-cards'>
+        {loading ? (
+          <p>Cargando productos...</p>
+        ) : (
+          productos.map((producto) => (
+            <Cards
+              key={producto.id}
+              id={producto.id}
+              nombre={producto.nombre}
+              precio={producto.precio}
+              imagen={producto.imagen}
+            />
+          ))
+        )}
+      </div>
+    </>
+  );
+};
 
 export default Products
