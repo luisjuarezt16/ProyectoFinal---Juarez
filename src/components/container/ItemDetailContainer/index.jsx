@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import "./styles.css"; // 🔥 AGREGA ESTO
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import "./styles.css"
 
 function ItemDetailContainer() {
   const { id } = useParams();
