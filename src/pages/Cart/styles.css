@@ -1,0 +1,81 @@
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.cart-empty {
+  text-align: center;
+  font-size: 18px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #6f0202; /* ayuda a que se note la sombra */
+}
+
+.cart-img {
+  width: 120px;
+  object-fit: contain;
+  background-color: rgb(46, 0, 0);          /* clave para PNG */
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-info h3 {
+  margin: 0 0 10px;
+}
+
+.btn-eliminar {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-eliminar:hover {
+  color: aliceblue;
+  background-color: #000000;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.btn-pagar {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-pagar:hover {
+  color: aliceblue;
+  background-color: #000000;
+}
