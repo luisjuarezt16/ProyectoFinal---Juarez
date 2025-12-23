@@ -16,13 +16,13 @@
   border: 1px solid #ddd;
   margin-bottom: 15px;
   border-radius: 8px;
-  background-color: #6f0202; /* ayuda a que se note la sombra */
+  background-color: #5d0000; /* ayuda a que se note la sombra */
 }
 
 .cart-img {
   width: 120px;
   object-fit: contain;
-  background-color: rgb(46, 0, 0);          /* clave para PNG */
+  background-color: rgb(42, 0, 0);          /* clave para PNG */
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
